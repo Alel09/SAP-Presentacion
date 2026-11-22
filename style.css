@@ -181,7 +181,7 @@ body.back .slide.active {
 }
 
 h1 {
-    font-size: 76px;
+    font-size: 67px;
     line-height: 1.04;
     font-weight: 800;
     letter-spacing: -.02em
@@ -529,7 +529,7 @@ pre.code,
 }
 
 .section h2 {
-    font-size: 72px
+    font-size: 74px
 }
 
 /* ───────── ENTRADA ESCALONADA (diapositivas de sección) ─────────
