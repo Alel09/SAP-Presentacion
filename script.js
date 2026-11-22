@@ -164,6 +164,7 @@ class Sim {
             const v = s.vars[k], ch = s.chg.includes(k);
             return `<tr class="${ch ? 'chg' : ''}"><td><b>${esc(k)}</b></td><td class="val ${v === null ? 'nul' : ''}">${v === null ? 'Sin definir' : esc(v)}</td><td class="st">${ch ? 'Actualizado' : v === null ? '—' : 'En memoria'}</td></tr>`
         }).join('');
+        const rv=$('tr.chg',this.el);if(rv)rv.scrollIntoView({block:'nearest'});
         const out = $('.out', this.el); out.innerHTML = s.out.map((o, k) => `<div class="${k === s.out.length - 1 && this.S[this.i - 1] && this.S[this.i - 1].out.length < s.out.length ? 'new' : ''}">${esc(o)}</div>`).join(''); out.scrollTop = 1e5;
         $('.sim-note', this.el).innerHTML = `<span>💡</span><span>${esc(s.note || '…')}</span>`;
         $('.st', this.el).textContent = `Paso ${this.i} / ${this.S.length - 1}`
@@ -306,7 +307,66 @@ class Orden {
     key() { }
     space() { if (this.ph === 'intro') this.start(); else if (this.ph === 'end') this.intro() }
 }
-
+//pikachu
+/*
+SIMS.pruebaLargo = {
+  file: 'prueba_desbordamiento.psc',
+  vars: ['a', 'b', 'c', 'd', 'e', 'f', 'g'],
+  intro: 'Prueba de desbordamiento: 26 líneas, una muy ancha y 7 variables.',
+  code: [
+    'Algoritmo PruebaLargo',
+    '  // Línea 2: este comentario es MUY largo a propósito para ver qué pasa cuando una sola línea es más ancha que el panel del código',
+    '  a <- 1',
+    '  b <- 2',
+    '  c <- 3',
+    '  d <- 4',
+    '  e <- 5',
+    '  f <- 6',
+    '  g <- 7',
+    '  Escribir "Variables listas"',
+    '  a <- a + 10',
+    '  b <- b + 10',
+    '  c <- c + 10',
+    '  d <- d + 10',
+    '  e <- e + 10',
+    '  f <- f + 10',
+    '  g <- g + 10',
+    '  Escribir "Sumé 10 a todas"',
+    '  Si a > 10 Entonces',
+    '    Escribir "a es mayor que 10"',
+    '  FinSi',
+    '  Si g > 10 Entonces',
+    '    Escribir "g es mayor que 10"',
+    '  FinSi',
+    '  Escribir "Fin de la prueba"',
+    'FinAlgoritmo'
+  ],
+  trace: [
+    {l:0,  out:'*** Inicio ***', note:'Comienza.'},
+    {l:2,  set:{a:1},  note:'a = 1'},
+    {l:3,  set:{b:2},  note:'b = 2'},
+    {l:4,  set:{c:3},  note:'c = 3'},
+    {l:5,  set:{d:4},  note:'d = 4'},
+    {l:6,  set:{e:5},  note:'e = 5'},
+    {l:7,  set:{f:6},  note:'f = 6'},
+    {l:8,  set:{g:7},  note:'g = 7'},
+    {l:9,  out:'Variables listas', note:'Se imprime el mensaje.'},
+    {l:10, set:{a:11}, note:'a = 1 + 10'},
+    {l:11, set:{b:12}, note:'b = 2 + 10'},
+    {l:12, set:{c:13}, note:'c = 3 + 10'},
+    {l:13, set:{d:14}, note:'d = 4 + 10'},
+    {l:14, set:{e:15}, note:'e = 5 + 10'},
+    {l:15, set:{f:16}, note:'f = 6 + 10'},
+    {l:16, set:{g:17}, note:'g = 7 + 10'},
+    {l:17, out:'Sumé 10 a todas', note:'Se imprime el mensaje.'},
+    {l:18, note:'¿11 > 10? Verdadero.'},
+    {l:19, out:'a es mayor que 10', note:'Entra al Si.'},
+    {l:21, note:'¿17 > 10? Verdadero.'},
+    {l:22, out:'g es mayor que 10', note:'Entra al Si.'},
+    {l:24, out:'Fin de la prueba', note:'Última instrucción.'},
+    {l:25, out:'*** Proceso terminado ***', note:'Fin.'}
+  ]
+};*/
 $$('.sim').forEach(el => new Sim(el, SIMS[el.dataset.sim]));
 $$('.countdown').forEach(el => new Countdown(el));
 $$('.game').forEach(el => el.dataset.game === 'quiz' ? new Quiz(el, QUIZ) : new Orden(el, ORDEN));

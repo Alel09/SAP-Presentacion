@@ -1014,6 +1014,30 @@ td.st {
     color: #d9fff9
 }
 
+/* Permite desplazarse en el código y en la tabla de variables */
+.editor{overflow:auto}
+.side .panel:first-child{overflow:auto}
+.ln{font-size:15px}   /* opcional: letra más chica para que quepan ~14 líneas */
+
+.editor::-webkit-scrollbar,
+.side .panel::-webkit-scrollbar{width:10px;height:10px}
+
+.editor::-webkit-scrollbar-track,
+.side .panel::-webkit-scrollbar-track{background:transparent}
+
+.editor::-webkit-scrollbar-thumb,
+.side .panel::-webkit-scrollbar-thumb{background:#2a3766;border-radius:99px}
+
+.editor::-webkit-scrollbar-thumb:hover,
+.side .panel::-webkit-scrollbar-thumb:hover{background:var(--a1)}
+
+.editor::-webkit-scrollbar-corner{background:transparent}
+
+.out::-webkit-scrollbar{width:10px;height:10px}
+.out::-webkit-scrollbar-track{background:transparent}
+.out::-webkit-scrollbar-thumb{background:#1e9c6b;border-radius:99px}
+.out::-webkit-scrollbar-thumb:hover{background:#34f5a6}
+
 /* ───────── JUEGOS ───────── */
 .game {
     flex: 1;
