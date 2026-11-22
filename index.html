@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentacion de SAP — PSeInt</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Fira+Code:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="stage">
+        <div id="deck">
+
+            <!-- ═══════════════ 1 · PORTADA ═══════════════ -->
+            <section class="slide cover" data-title="Portada" data-chrome="off">
+                <div class="kicker">Fundamentos de programación</div>
+                <h1>Aprende pseudocódigo<br>con <span class="grad">PSeInt</span></h1>
+                <p class="lead">Subtítulo de tu presentación: una frase que explique de qué trata y por qué importa.</p>
+                <div class="meta">
+                    <span class="chip cy">Equipo: カエルの神</span>
+                    <span class="chip">Fecha: 24/11/2026</span>
+                    <span class="chip">Solución Algoritmica de Problemas</span>
+                </div>
+                <div class="deco card">
+                    <div class="dots"><i></i><i></i><i></i></div>
+                    <pre class="code" style="background:none;border:0;padding:0;font-size:17px">
+Algoritmo Hola
+    Escribir "¡Hola, mundo!"
+    Para i = 1 Hasta 3 Hacer
+        Escribir "Vuelta ", i
+    FinPara
+FinAlgoritmo</pre>
+                </div>
+                <aside class="notes">Presentar al equipo y el objetivo de la exposición. Duración estimada: 1 minuto.
+                </aside>
+            </section>
+            <!--Tema 1-->
+            <section class="slide section" data-title="Sección 01 · Conceptos" data-chrome="off">
+                <div class="big">01</div>
+                <div class="kicker">Parte uno</div>
+                <h2 class="grad">Conceptos clave</h2>
+                <p class="lead">Una frase corta que presente esta sección. Úsala para separar los grandes bloques de tu
+                    exposición.</p>
+            </section>
+            <!--Tema 2-->
+            <section class="slide section" data-title="Sección 02 · Conceptos" data-chrome="off">
+                <div class="big">02</div>
+                <div class="kicker">Parte dos</div>
+                <h2 class="grad">Conceptos clave</h2>
+                <p class="lead">Una frase corta que presente esta sección. Úsala para separar los grandes bloques de tu
+                    exposición.</p>
+            </section>
+
+            <!--Aqui se agregan lo section de las diapositivas-->
+        </div>
+        <div id="foot"><span class="t" id="footTitle"></span><span id="footNum"></span></div>
+        <div id="bar"></div>
+    </div>
+
+    <!-- ───────── Interfaz (fuera del lienzo) ───────── -->
+    <div id="clock"></div>
+    <div id="notesPanel"></div>
+    <div id="hud">
+        <button id="bPrev" title="Anterior (←)"><i class="fa-solid fa-arrow-left"></i></button>
+        <span class="cnt" id="hudCnt">1 / 1</span>
+        <button id="bNext" title="Siguiente (→)"><i class="fa-solid fa-arrow-right"></i></button>
+        <button id="bOv" title="Índice (O)"><i class="fa-solid fa-grip"></i></button>
+        <button id="bNotes" title="Notas del orador (N)"><i class="fa-solid fa-comment-dots"></i></button>
+        <button id="bClock" title="Cronómetro de exposición (T)"><i class="fa-solid fa-stopwatch"></i></button>
+        <button id="bLaser" title="Puntero láser (L)"><i class="fa-solid fa-location-crosshairs"></i></button>
+        <button id="bSound" title="Sonido (M)"><i class="fa-solid fa-volume-high"></i></button>
+        <button id="bFs" title="Pantalla completa (F)"><i class="fa-solid fa-expand"></i></button>
+        <button id="bHelp" title="Atajos (?)"><i class="fa-solid fa-question"></i></button>
+    </div>
+    <div class="overlay" id="ovl">
+        <h2>Índice de diapositivas <button onclick="toggleOv(false)"><i class="fa-solid fa-xmark"></i> Cerrar</button>
+        </h2>
+        <div id="ovGrid"></div>
+    </div>
+    <div class="overlay" id="help">
+        <h2>Atajos de teclado <button onclick="toggleHelp(false)"><i class="fa-solid fa-xmark"></i> Cerrar</button></h2>
+        <div class="keys">
+            <kbd>→ / PgDn</kbd><span>Siguiente (revela los elementos paso a paso)</span>
+            <kbd>← / PgUp</kbd><span>Diapositiva anterior</span>
+            <kbd>Espacio / Enter</kbd><span>Avanzar el simulador, iniciar el juego o el cronómetro; si no hay,
+                avanza</span>
+            <kbd>1 2 3 4 / A B C D</kbd><span>Responder en el quiz</span>
+            <kbd>O</kbd><span>Índice de diapositivas</span>
+            <kbd>N</kbd><span>Notas del orador</span>
+            <kbd>T</kbd><span>Cronómetro de la exposición (clic para reiniciar)</span>
+            <kbd>L</kbd><span>Puntero láser</span>
+            <kbd>B</kbd><span>Pantalla en negro</span>
+            <kbd>M</kbd><span>Silenciar / activar sonidos</span>
+            <kbd>F</kbd><span>Pantalla completa</span>
+            <kbd>Inicio / Fin</kbd><span>Primera / última diapositiva</span>
+        </div>
+    </div>
+    <div id="blackout"></div>
+    <div id="laser"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.17.1/flowchart.min.js"></script>
+    <script src="script.js"></script>
+    <script defer src="flowchart.js"></script>
+</body>
+
+</html>

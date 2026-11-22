@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plantilla de Presentación — PSeInt</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+
+<!--
+╔══════════════════════════════════════════════════════════════════════╗
+║  GUÍA RÁPIDA PARA EDITAR ESTA PLANTILLA                              ║
+╠══════════════════════════════════════════════════════════════════════╣
+║  1. Cada diapositiva es un <section class="slide"> dentro de #deck.  ║
+║     Copia una existente, pégala donde quieras y cambia el texto.     ║
+║  2. Atributos útiles de <section class="slide">:                     ║
+║       data-title="..."      nombre en el índice (tecla O)            ║
+║       data-presenter="Ana"  muestra quién expone esa diapositiva     ║
+║       data-chrome="off"     oculta numeración (portadas)             ║
+║  3. Clase "frag" en cualquier elemento = aparece con cada clic/tecla.║
+║  4. <aside class="notes">…</aside> = notas del orador (tecla N).     ║
+║  5. Imágenes: reemplaza el .img-frame por                            ║
+║       <div class="img-frame"><img src="imagenes/foto.png"></div>     ║
+║  6. Diagramas: edita el texto dentro de <pre class="mermaid">        ║
+║     (sintaxis Mermaid; requiere internet la primera vez).            ║
+║  7. Simuladores: <div class="sim" data-sim="nombre"></div> y define  ║
+║     "nombre" en el objeto SIMS (más abajo, sección CONFIGURACIÓN).   ║
+║  8. Juegos: edita QUIZ y ORDEN en la sección CONFIGURACIÓN.          ║
+║  9. Título y duración de la exposición: objeto DECK.                 ║
+╚══════════════════════════════════════════════════════════════════════╝
+-->
+
+</head>
+
+<body>
+<div id="stage">
+  <div id="deck">
+
+    <!-- ═══════════════ 1 · PORTADA ═══════════════ -->
+    <section class="slide cover" data-title="Portada" data-chrome="off">
+      <div class="kicker">Fundamentos de programación</div>
+      <h1>Aprende pseudocódigo<br>con <span class="grad">PSeInt</span></h1>
+      <p class="lead">Subtítulo de tu presentación: una frase que explique de qué trata y por qué importa.</p>
+      <div class="meta">
+        <span class="chip cy">👥 Equipo: Nombre del equipo</span>
+        <span class="chip">📅 Fecha</span>
+        <span class="chip">🏫 Materia / Institución</span>
+      </div>
+      <div class="deco card">
+        <div class="dots"><i></i><i></i><i></i></div>
+<pre class="code" style="background:none;border:0;padding:0;font-size:17px">
+Algoritmo Hola
+  Escribir "¡Hola, mundo!"
+  Para i = 1 Hasta 3 Hacer
+    Escribir "Vuelta ", i
+  FinPara
+FinAlgoritmo</pre>
+      </div>
+      <aside class="notes">Presentar al equipo y el objetivo de la exposición. Duración estimada: 1 minuto.</aside>
+    </section>
+
+    <!-- ═══════════════ 2 · AGENDA ═══════════════ -->
+    <section class="slide" data-title="Agenda" data-presenter="Nombre 1">
+      <div class="kicker">Hoja de ruta</div>
+      <h2>¿Qué vamos a ver hoy?</h2>
+      <ul class="bul" style="margin-top:6px">
+        <li class="frag"><b>Concepto:</b> qué es y para qué sirve</li>
+        <li class="frag"><b>Sintaxis:</b> las estructuras básicas</li>
+        <li class="frag"><b>Diagramas de flujo:</b> pensar antes de programar</li>
+        <li class="frag"><b>Simulación:</b> ejecución paso a paso</li>
+        <li class="frag"><b>Juego:</b> ¡ponemos a prueba lo aprendido!</li>
+      </ul>
+      <aside class="notes">Mencionar cuánto dura cada bloque y quién expone cada uno.</aside>
+    </section>
+
+    <!-- ═══════════════ 3 · SECCIÓN ═══════════════ -->
+    <section class="slide section" data-title="Sección 01 · Conceptos" data-chrome="off">
+      <div class="big">01</div>
+      <div class="kicker">Parte uno</div>
+      <h2 class="grad">Conceptos clave</h2>
+      <p class="lead">Una frase corta que presente esta sección. Úsala para separar los grandes bloques de tu exposición.</p>
+    </section>
+
+    <!-- ═══════════════ 4 · TEXTO + IMAGEN ═══════════════ -->
+    <section class="slide" data-title="Texto + imagen" data-presenter="Nombre 1">
+      <div class="kicker">Concepto</div>
+      <h2>¿Qué es el Modo Libre?</h2>
+      <div class="cols cols-6040 grow vcenter">
+        <ul class="bul">
+          <li class="frag"><b>Sintaxis flexible:</b> no exige punto y coma ni declarar tipos.</li>
+          <li class="frag"><b>Enfoque en la lógica:</b> menos errores de forma, más pensamiento algorítmico.</li>
+          <li class="frag"><b>Puente a otros lenguajes:</b> ideal antes de Python, C++ o Java.</li>
+        </ul>
+        <div class="frag" style="height:100%;max-height:380px">
+          <!-- Cambia por: <div class="img-frame"><img src="imagenes/tu-imagen.png"></div> -->
+          <div class="img-frame" data-label="Reemplaza con tu imagen (captura de PSeInt, esquema, foto…)"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ 5 · COMPARACIÓN ═══════════════ -->
+    <section class="slide" data-title="Comparación" data-presenter="Nombre 2">
+      <div class="kicker">Comparativa</div>
+      <h2>Modo estricto <span class="muted">vs</span> Modo libre</h2>
+      <div class="cols cols-2 grow">
+        <div class="card frag">
+          <h3 class="c4">🔒 Modo estricto</h3>
+          <ul class="bul no" style="gap:12px;margin-top:14px">
+            <li>Exige punto y coma</li><li>Requiere declarar variables</li><li>Un solo símbolo de asignación</li>
+          </ul>
+        </div>
+        <div class="card frag">
+          <h3 class="c1">🔓 Modo libre</h3>
+          <ul class="bul ok" style="gap:12px;margin-top:14px">
+            <li>Punto y coma opcional</li><li>Variables sin declarar</li><li>Acepta <code class="mono c3">&lt;-</code> o <code class="mono c3">=</code></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ 6 · TARJETAS CON CÓDIGO ═══════════════ -->
+    <section class="slide" data-title="Estructuras básicas" data-presenter="Nombre 2">
+      <div class="kicker">Sintaxis</div>
+      <h2>Las tres estructuras básicas</h2>
+      <div class="cols cols-3">
+        <div class="card frag">
+          <h3 class="c1">▶ Entrada / Salida</h3>
+<pre class="code" style="font-size:16px;padding:14px;margin-top:10px">
+Escribir "Tu edad:"
+Leer edad
+Escribir "Edad: ", edad</pre>
+        </div>
+        <div class="card frag">
+          <h3 class="c3">⑂ Condicional</h3>
+<pre class="code" style="font-size:16px;padding:14px;margin-top:10px">
+Si edad >= 18 Entonces
+  Escribir "Mayor"
+Sino
+  Escribir "Menor"
+FinSi</pre>
+        </div>
+        <div class="card frag">
+          <h3 style="color:var(--ok)">↻ Repetición</h3>
+<pre class="code" style="font-size:16px;padding:14px;margin-top:10px">
+Para i = 1 Hasta 5 Hacer
+  Escribir "Vuelta ", i
+FinPara</pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ 7 · DIAGRAMA DE FLUJO + LEYENDA ═══════════════ -->
+    <section class="slide" data-title="Diagrama de flujo" data-presenter="Nombre 3">
+      <div class="kicker">Diagrama de flujo</div>
+      <h2>Pensar antes de programar</h2>
+      <div class="cols cols-6040 grow" style="min-height:0">
+        <div class="diagram">
+<!-- EDITA este texto (sintaxis Mermaid). Formas: ([óvalo]) [rect] [/paralelogramo/] {rombo} -->
+<pre class="mermaid">
+flowchart TD
+  A([Inicio]):::fin --> B[/"Leer nota1, nota2"/]:::io
+  B --> C["prom = (nota1 + nota2) / 2"]:::proc
+  C --> D{"prom >= 70 ?"}:::dec
+  D -- Sí --> E[/"Escribir APROBADO"/]:::io
+  D -- No --> F[/"Escribir REPROBADO"/]:::io
+  E --> G([Fin]):::fin
+  F --> G
+  classDef fin fill:#00f5d4,stroke:none,color:#04121a,font-weight:bold
+  classDef io fill:#1d2850,stroke:#00f5d4,color:#eef2ff
+  classDef proc fill:#1d2850,stroke:#4895ef,color:#eef2ff
+  classDef dec fill:#2b2a12,stroke:#ffd60a,color:#fff7cc
+</pre>
+        </div>
+        <div class="legend frag" style="justify-content:center">
+          <h3>Símbolos básicos</h3>
+          <div><span class="shape oval"></span> Inicio / Fin</div>
+          <div><span class="shape para"></span> Entrada / Salida</div>
+          <div><span class="shape rect"></span> Proceso (cálculo)</div>
+          <div><span class="shape diam"></span> Decisión (Sí / No)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ 8 · DIAGRAMA + CÓDIGO ═══════════════ -->
+    <section class="slide" data-title="Diagrama ↔ código" data-presenter="Nombre 3">
+      <div class="kicker">Del diagrama al pseudocódigo</div>
+      <h2>Un bucle, dos formas de verlo</h2>
+      <div class="cols cols-4060 grow" style="min-height:0">
+<pre class="code frag" style="align-self:start">
+Algoritmo Suma
+  suma = 0
+  Para i = 1 Hasta 3 Hacer
+    suma = suma + i
+    Escribir suma
+  FinPara
+  Escribir "Total: ", suma
+FinAlgoritmo</pre>
+        <div class="diagram frag">
+<pre class="mermaid">
+flowchart TD
+  A([Inicio]):::fin --> B["suma = 0 · i = 1"]:::proc
+  B --> C{"i <= 3 ?"}:::dec
+  C -- Sí --> D["suma = suma + i"]:::proc
+  D --> E[/"Escribir suma"/]:::io
+  E --> F["i = i + 1"]:::proc
+  F --> C
+  C -- No --> G[/"Escribir total"/]:::io
+  G --> H([Fin]):::fin
+  classDef fin fill:#00f5d4,stroke:none,color:#04121a,font-weight:bold
+  classDef io fill:#1d2850,stroke:#00f5d4,color:#eef2ff
+  classDef proc fill:#1d2850,stroke:#4895ef,color:#eef2ff
+  classDef dec fill:#2b2a12,stroke:#ffd60a,color:#fff7cc
+</pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ 9 · SIMULADOR 1 ═══════════════ -->
+    <section class="slide" data-title="Simulador: condicional" data-presenter="Nombre 4" style="padding-top:36px">
+      <div class="kicker" style="margin-bottom:2px">Simulador 1 · Condicionales</div>
+      <h2 style="font-size:34px;margin-bottom:10px">Promedio y aprobación</h2>
+      <div class="sim" data-sim="promedio"></div>
+      <aside class="notes">Pulsa Espacio para avanzar línea por línea. Haz clic en una línea para saltar a ella. Pregunta al público: ¿qué línea se saltará?</aside>
+    </section>
+
+    <!-- ═══════════════ 10 · SIMULADOR 2 ═══════════════ -->
+    <section class="slide" data-title="Simulador: bucle" data-presenter="Nombre 4" style="padding-top:36px">
+      <div class="kicker" style="margin-bottom:2px">Simulador 2 · Repetitivas</div>
+      <h2 style="font-size:34px;margin-bottom:10px">Acumulador con bucle Para</h2>
+      <div class="sim" data-sim="acumulador"></div>
+    </section>
+
+    <!-- ═══════════════ 11 · GALERÍA ═══════════════ -->
+    <section class="slide" data-title="Galería de imágenes" data-presenter="Nombre 2">
+      <div class="kicker">Ejemplos visuales</div>
+      <h2>Así se ve en la práctica</h2>
+      <div class="cols cols-3 grow" style="min-height:0">
+        <div class="frag" style="display:flex;flex-direction:column"><div class="img-frame" data-label="Imagen 1"></div><div class="caption">Descripción de la imagen 1</div></div>
+        <div class="frag" style="display:flex;flex-direction:column"><div class="img-frame" data-label="Imagen 2"></div><div class="caption">Descripción de la imagen 2</div></div>
+        <div class="frag" style="display:flex;flex-direction:column"><div class="img-frame" data-label="Imagen 3"></div><div class="caption">Descripción de la imagen 3</div></div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ 12 · IMAGEN GRANDE + PIE ═══════════════ -->
+    <section class="slide" data-title="Imagen a pantalla completa" data-presenter="Nombre 1" style="padding-bottom:70px">
+      <div class="kicker">Captura</div>
+      <h2 style="margin-bottom:16px">Título de la captura o esquema</h2>
+      <div class="grow" style="min-height:0"><div class="img-frame" data-label="Imagen grande: captura del programa, esquema, resultado…"></div></div>
+    </section>
+
+    <!-- ═══════════════ 13 · LÍNEA DE TIEMPO ═══════════════ -->
+    <section class="slide" data-title="Pasos / línea de tiempo" data-presenter="Nombre 3">
+      <div class="kicker">Proceso</div>
+      <h2>Cómo resolver un problema</h2>
+      <div class="timeline">
+        <div class="tl frag"><div class="dot c1">1</div><h3>Analizar</h3><p style="font-size:18px">Entender qué se pide</p></div>
+        <div class="tl frag"><div class="dot c2" style="border-color:var(--a2)">2</div><h3>Diseñar</h3><p style="font-size:18px">Diagrama de flujo</p></div>
+        <div class="tl frag"><div class="dot c3" style="border-color:var(--a3)">3</div><h3>Codificar</h3><p style="font-size:18px">Escribir pseudocódigo</p></div>
+        <div class="tl frag"><div class="dot c4" style="border-color:var(--a4)">4</div><h3>Probar</h3><p style="font-size:18px">Ejecutar y corregir</p></div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ 14 · NÚMEROS ═══════════════ -->
+    <section class="slide" data-title="Cifras destacadas" data-presenter="Nombre 2">
+      <div class="kicker">En números</div>
+      <h2>Datos que hay que recordar</h2>
+      <div class="cols cols-3 grow vcenter">
+        <div class="stat frag"><div class="num grad" data-count="3">0</div><div class="lbl">estructuras básicas</div></div>
+        <div class="stat frag"><div class="num grad" data-count="100" data-suffix="%">0</div><div class="lbl">enfoque en la lógica</div></div>
+        <div class="stat frag"><div class="num grad" data-count="0">0</div><div class="lbl">puntos y coma obligatorios</div></div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ 15 · CITA / IDEA CLAVE ═══════════════ -->
+    <section class="slide center" data-title="Idea clave" data-presenter="Nombre 1">
+      <div class="quote">Un buen programa empieza con un buen algoritmo, no con una línea de código.</div>
+      <div class="quote-by">— Autor o fuente</div>
+    </section>
+
+    <!-- ═══════════════ 16 · ACTIVIDAD CON CRONÓMETRO ═══════════════ -->
+    <section class="slide" data-title="Actividad en equipo (cronómetro)" data-presenter="Nombre 4">
+      <div class="kicker">Actividad</div>
+      <h2>Reto en equipo ⏱️</h2>
+      <div class="cols cols-2 grow vcenter">
+        <div class="card">
+          <h3 class="c3">Instrucciones</h3>
+          <p style="margin-top:10px">Escribe en papel el pseudocódigo que pida un número y diga si es <b>par</b> o <b>impar</b>.</p>
+          <p class="muted" style="margin-top:14px;font-size:18px">Pista: usa <span class="mono c1">MOD</span>.</p>
+        </div>
+        <div class="countdown" data-seconds="120"></div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ 17 · JUEGO: QUIZ ═══════════════ -->
+    <section class="slide" data-title="🎮 Juego: Quiz relámpago" style="padding-top:38px">
+      <div class="game" data-game="quiz"></div>
+    </section>
+
+    <!-- ═══════════════ 18 · JUEGO: ORDENA EL CÓDIGO ═══════════════ -->
+    <section class="slide" data-title="🎮 Juego: Ordena el algoritmo" style="padding-top:38px">
+      <div class="game" data-game="orden"></div>
+    </section>
+
+    <!-- ═══════════════ 19 · CONCLUSIONES ═══════════════ -->
+    <section class="slide" data-title="Conclusiones" data-presenter="Nombre 1">
+      <div class="kicker">Para llevarnos</div>
+      <h2>Conclusiones</h2>
+      <ul class="bul">
+        <li class="frag">Primera idea principal que quieres que recuerden.</li>
+        <li class="frag">Segunda idea principal, breve y clara.</li>
+        <li class="frag">Tercera idea o recomendación final.</li>
+      </ul>
+    </section>
+
+    <!-- ═══════════════ 20 · GRACIAS + EQUIPO ═══════════════ -->
+    <section class="slide center" data-title="Gracias / equipo" data-chrome="off">
+      <h1 class="grad" style="font-size:90px">¡Gracias!</h1>
+      <p class="lead" style="margin:10px 0 34px">¿Preguntas?</p>
+      <div class="cols cols-4" style="width:100%;max-width:960px">
+        <div class="member frag"><div class="avatar">A</div><h3>Nombre 1</h3><p style="font-size:16px" class="muted">Rol / tema</p></div>
+        <div class="member frag"><div class="avatar">B</div><h3>Nombre 2</h3><p style="font-size:16px" class="muted">Rol / tema</p></div>
+        <div class="member frag"><div class="avatar">C</div><h3>Nombre 3</h3><p style="font-size:16px" class="muted">Rol / tema</p></div>
+        <div class="member frag"><div class="avatar">D</div><h3>Nombre 4</h3><p style="font-size:16px" class="muted">Rol / tema</p></div>
+      </div>
+    </section>
+
+  </div>
+  <div id="foot"><span class="t" id="footTitle"></span><span id="footNum"></span></div>
+  <div id="bar"></div>
+</div>
+
+<!-- ───────── Interfaz (fuera del lienzo) ───────── -->
+<div id="clock"></div>
+<div id="notesPanel"></div>
+<div id="hud">
+  <button id="bPrev" title="Anterior (←)">◀</button>
+  <span class="cnt" id="hudCnt">1 / 1</span>
+  <button id="bNext" title="Siguiente (→)">▶</button>
+  <button id="bOv" title="Índice (O)">☰</button>
+  <button id="bNotes" title="Notas del orador (N)">🗒</button>
+  <button id="bClock" title="Cronómetro de exposición (T)">⏱</button>
+  <button id="bLaser" title="Puntero láser (L)">🔴</button>
+  <button id="bSound" title="Sonido (M)">🔊</button>
+  <button id="bFs" title="Pantalla completa (F)">⛶</button>
+  <button id="bHelp" title="Atajos (?)">?</button>
+</div>
+<div class="overlay" id="ovl"><h2>Índice de diapositivas <button onclick="toggleOv(false)">✕ Cerrar</button></h2><div id="ovGrid"></div></div>
+<div class="overlay" id="help"><h2>Atajos de teclado <button onclick="toggleHelp(false)">✕ Cerrar</button></h2>
+  <div class="keys">
+    <kbd>→ / PgDn</kbd><span>Siguiente (revela los elementos paso a paso)</span>
+    <kbd>←  / PgUp</kbd><span>Diapositiva anterior</span>
+    <kbd>Espacio / Enter</kbd><span>Avanzar el simulador, iniciar el juego o el cronómetro; si no hay, avanza</span>
+    <kbd>1 2 3 4 / A B C D</kbd><span>Responder en el quiz</span>
+    <kbd>O</kbd><span>Índice de diapositivas</span>
+    <kbd>N</kbd><span>Notas del orador</span>
+    <kbd>T</kbd><span>Cronómetro de la exposición (clic para reiniciar)</span>
+    <kbd>L</kbd><span>Puntero láser</span>
+    <kbd>B</kbd><span>Pantalla en negro</span>
+    <kbd>M</kbd><span>Silenciar / activar sonidos</span>
+    <kbd>F</kbd><span>Pantalla completa</span>
+    <kbd>Inicio / Fin</kbd><span>Primera / última diapositiva</span>
+  </div></div>
+<div id="blackout"></div>
+<div id="laser"></div>
+
+<script type="module">
+  // Diagramas de flujo (Mermaid). Si no hay internet se verá el texto del diagrama.
+  try{
+    const { default: mermaid } = await import('https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs');
+    mermaid.initialize({startOnLoad:false,theme:'base',securityLevel:'loose',flowchart:{curve:'basis',htmlLabels:true,padding:12},
+      themeVariables:{fontFamily:'Inter, system-ui, sans-serif',fontSize:'15px',primaryColor:'#1d2850',primaryTextColor:'#eef2ff',
+      primaryBorderColor:'#4895ef',lineColor:'#9aa7d1',edgeLabelBackground:'#0b1020',textColor:'#eef2ff'}});
+    await mermaid.run({querySelector:'.mermaid'});
+  }catch(err){console.warn('Mermaid no se pudo cargar:',err)}
+</script>
+
+<script>
+
+</script>
+</body>
+</html>
