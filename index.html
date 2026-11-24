@@ -41,87 +41,56 @@ FinAlgoritmo</pre>
                 <aside class="notes">Todos los caminos llevan a derecho.
                 </aside>
             </section>
+            <!--Tema 8-->
+            <section class="slide section" data-title="Sección 08 · Conceptos" data-chrome="off">
+                <div class="big">PA</div>
+                <div class="kicker">Problema de Aplicación</div>
+                <h2 class="grad">Conclusiones sobre las estrategias y procesos sobre la solución de problemas.</h2>
+                <p class="lead">Como fue que cada tema aporto a la resolucion de un problema.</p>
+            </section>
+            <section class="slide" data-title="Comparación" data-presenter="Nombre 2">
+                <div class="kicker">Problema de Aplicación</div>
+                <h2>Distribución equitativa de apoyos <span class="muted">alimentarios.</span></h2>
+                <div class="cols cols-2 grow">
+                    <div class="card frag">
+                        <h3 class="c4">Contexto</h3>
+                        <ul class="bul no" style="gap:12px;margin-top:14px">
+                            <li>Un banco de alimentos dispone semanalmente de una cantidad limitada de paquetes alimentarios para apoyar a familias de una comunidad.</li>
+                            <li>Las solicitudes recibidas pueden superar la cantidad de apoyos disponibles. Además, las familias presentan características y necesidades diferentes, por lo que el problema no consiste únicamente en entregar los paquetes conforme se reciben las solicitudes, sino en establecer un procedimiento claro, transparente y justificable para determinar cómo distribuir los recursos disponibles.</li>
+                        </ul>
+                    </div>
+                    <div class="card frag">
+                        <h3 class="c1">Problema</h3>
+                        <ul class="bul ok" style="gap:12px;margin-top:14px">
+                            <li>Diseñar una solución algorítmica que permita procesar las solicitudes de las familias y distribuir una cantidad limitada de paquetes alimentarios de acuerdo con criterios previamente definidos.</li>
+                            <li>El sistema deberá considerar que posiblemente no existan suficientes apoyos para todas las familias solicitantes.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="slide" data-title="Comparación" data-presenter="Nombre 2">
+                <div class="kicker">Problema de Aplicación</div>
+                <div class="cols cols-2 grow">
+                    <div class="card frag">
+                        <h3 class="c4">Objetivo</h3>
+                        <ul class="bul no" style="gap:12px;margin-top:14px">
+                            <li>Diseñar, formular y representar una solución algorítmica que permita realizar la asignación de los apoyos alimentarios de manera consistente con los criterios establecidos y generar información que permita evaluar los resultados obtenidos.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+
+
             <!--Tema 1-->
             <section class="slide section" data-title="Sección 01 · Conceptos" data-chrome="off">
                 <div class="big">01</div>
                 <div class="kicker">Primera parte</div>
                 <h2 class="grad">Patrones algorítmicos.</h2>
-                <p class="lead">Los problemas con historias distintas pueden compartir la misma estructura de solución.
-                    Reconocerlas nos permiten reutilizar estrategias en lugar de diseñarlas desde cero.</p>
+                <p class="lead">Problemas con historias distintas pueden compartir la misma estructura de solución.
+                    Reconocerla permite reutilizar estrategias en vez de diseñar desde cero.</p>
             </section>
-            <section class="slide" data-title="Texto + imagen" data-presenter="Angel">
-                <div class="kicker">Concepto</div>
-                <h2>¿Qué es un patrón algorítmico?</h2>
-                <div class="cols cols-6040 grow vcenter">
-                    <ul class="bul">
-                        <li class="frag">Estructura de solución recurrente, aplicable a problemas con características
-                            semejantes.</li>
-                        <li class="frag"><b>No es un programa que se copie literalmente</b> sino una forma general de
-                            organizar acciones, decisiones o repeticiones.</li>
-                        <li class="frag">Por ejemplo, sumar ventas, acumular distancias y sumar calificaciones comparten
-                            la misma estructura</li>
-                    </ul>
 
-                </div>
-            </section>
-            <section class="slide" data-title="Pasos / línea de tiempo" data-presenter="Nombre 3">
-                <div class="kicker">Proceso</div>
-                <h2>Esta estructura compartida es...</h2>
-                <div class="timeline">
-                    <div class="tl frag">
-                        <div class="dot c1">1</div>
-                        <h3>Recorrer datos</h3>
-                    </div>
-                    <div class="tl frag">
-                        <div class="dot c2" style="border-color:var(--a2)">2</div>
-                        <h3>Acumular valores</h3>
-                    </div>
-                    <div class="tl frag">
-                        <div class="dot c3" style="border-color:var(--a3)">3</div>
-                        <h3>Producir un resultado</h3>
-                    </div>
-                </div>
-            </section>
-            <section class="slide" data-title="Agenda" data-presenter="Nombre 1">
-                <div class="kicker">Hoja de ruta</div>
-                <h2>Importancia de los patrones</h2>
-                <ul class="bul" style="margin-top:6px">
-                    <li class="frag">Permiten reutilizar ideas y estrategias</li>
-                    <li class="frag">Reducen el esfuerzo de diseño</li>
-                    <li class="frag">Facilitan comparar, explicar y depurar algoritmos</li>
-                    <li class="frag">favorecen el pensamiento abstracto</li>
-                </ul>
-                <aside class="notes">Mencionar cuánto dura cada bloque y quién expone cada uno.</aside>
-            </section>
-            <section class="slide" data-title="Estructuras básicas" data-presenter="Nombre 2">
-                <div class="kicker">Sintaxis</div>
-                <h2>Las tres estructuras básicas</h2>
-                <div class="cols cols-3">
-                    <div class="card frag">
-                        <h3 class="c1">▶ Entrada / Salida</h3>
-                        <pre class="code" style="font-size:16px;padding:14px;margin-top:10px">
-Escribir "Tu edad:"
-Leer edad
-Escribir "Edad: ", edad</pre>
-                    </div>
-                    <div class="card frag">
-                        <h3 class="c3">⑂ Condicional</h3>
-                        <pre class="code" style="font-size:16px;padding:14px;margin-top:10px">
-Si edad >= 18 Entonces
-  Escribir "Mayor"
-Sino
-  Escribir "Menor"
-FinSi</pre>
-                    </div>
-                    <div class="card frag">
-                        <h3 style="color:var(--ok)">↻ Repetición</h3>
-                        <pre class="code" style="font-size:16px;padding:14px;margin-top:10px">
-Para i = 1 Hasta 5 Hacer
-  Escribir "Vuelta ", i
-FinPara</pre>
-                    </div>
-                </div>
-            </section>
 
 
             <!--Tema 2-->
@@ -129,56 +98,49 @@ FinPara</pre>
                 <div class="big">02</div>
                 <div class="kicker">Segunda parte</div>
                 <h2 class="grad">Categorización de problemas.</h2>
-                <p class="lead">Una frase corta que presente esta sección. Úsala para separar los grandes bloques de tu
-                    exposición.</p>
+                <p class="lead">Antes de decidir cómo resolver un problema conviene reconocer qué tipo de problema
+                    tenemos enfrente. La categoría orienta, pero no determina por sí sola, la estrategia de solución.
+                </p>
             </section>
             <!--Tema 3-->
             <section class="slide section" data-title="Sección 03 · Conceptos" data-chrome="off">
                 <div class="big">03</div>
                 <div class="kicker">Tercera parte</div>
                 <h2 class="grad">Relación entre subtareas.</h2>
-                <p class="lead">Una frase corta que presente esta sección. Úsala para separar los grandes bloques de tu
-                    exposición.</p>
+                <p class="lead">Descomponer un problema no basta: también hay que entender cómo se conectan sus partes,
+                    qué información pasa entre ellas y qué subtareas dependen de otras. </p>
             </section>
             <!--Tema 4-->
             <section class="slide section" data-title="Sección 04 · Conceptos" data-chrome="off">
                 <div class="big">04</div>
                 <div class="kicker">Cuarta parte</div>
                 <h2 class="grad">Esquematización de la estructura del problema.</h2>
-                <p class="lead">Una frase corta que presente esta sección. Úsala para separar los grandes bloques de tu
-                    exposición.</p>
+                <p class="lead">Un esquema hace visible la lógica del problema antes de programar. Sirve para
+                    comprender, comunicar y revisar la solución antes de escribir código.</p>
             </section>
             <!--Tema 5-->
             <section class="slide section" data-title="Sección 05 · Conceptos" data-chrome="off">
                 <div class="big">05</div>
                 <div class="kicker">Quinta parte</div>
                 <h2 class="grad"> Comparación de soluciones.</h2>
-                <p class="lead">Una frase corta que presente esta sección. Úsala para separar los grandes bloques de tu
-                    exposición.</p>
+                <p class="lead">Que dos algoritmos produzcan la misma salida no significa que sean equivalentes en
+                    claridad, memoria, tiempo, robustez o conveniencia para un contexto.</p>
             </section>
             <!--Tema 6-->
             <section class="slide section" data-title="Sección 06 · Conceptos" data-chrome="off">
                 <div class="big">06</div>
                 <div class="kicker">Sexta parte</div>
                 <h2 class="grad">Formulación de ideas precisas.</h2>
-                <p class="lead">Una frase corta que presente esta sección. Úsala para separar los grandes bloques de tu
-                    exposición.</p>
+                <p class="lead">Una idea algorítmica precisa reduce ambigüedades: debe indicar qué datos se usan, qué
+                    acción se realiza, bajo qué condición y qué resultado se espera.</p>
             </section>
             <!--Tema 7-->
             <section class="slide section" data-title="Sección 07 · Conceptos" data-chrome="off">
                 <div class="big">07</div>
                 <div class="kicker">Septima parte</div>
                 <h2 class="grad">Diferenciación de la formulación y la implementación de la solución.</h2>
-                <p class="lead">Una frase corta que presente esta sección. Úsala para separar los grandes bloques de tu
-                    exposición.</p>
-            </section>
-            <!--Tema 8-->
-            <section class="slide section" data-title="Sección 08 · Conceptos" data-chrome="off">
-                <div class="big">08</div>
-                <div class="kicker">Octava parte</div>
-                <h2 class="grad">Conclusiones sobre las estrategias y procesos sobre la solución de problemas.</h2>
-                <p class="lead">Una frase corta que presente esta sección. Úsala para separar los grandes bloques de tu
-                    exposición.</p>
+                <p class="lead">Resolver la lógica de un problema y escribirla en una herramienta concreta son etapas
+                    relacionadas, pero distintas. Una buena implementación no corrige una formulación equivocada. </p>
             </section>
 
             <!--<section class="slide" data-title="Simulador: prueba larga" data-presenter="Nombre 1"

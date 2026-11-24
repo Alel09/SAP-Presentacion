@@ -355,7 +355,7 @@ ul.bul li::before {
 }
 
 ul.bul.ok li::before {
-    content: "✓";
+    content: ">";
     transform: none;
     background: none;
     color: var(--ok);
@@ -364,7 +364,7 @@ ul.bul.ok li::before {
 }
 
 ul.bul.no li::before {
-    content: "✕";
+    content: ">";
     transform: none;
     background: none;
     color: var(--bad);
@@ -788,6 +788,14 @@ pre.flowchart.arrastrando {
 
 .member:nth-child(4) .avatar {
     background: linear-gradient(135deg, var(--ok), var(--a2))
+}
+
+.member:nth-child(5) .avatar {
+    background: linear-gradient(135deg, var(--a3), #3cad62)
+}
+
+.member:nth-child(6) .avatar {
+    background: linear-gradient(135deg, var(--a2), #5c1143)
 }
 
 /* ───────── SIMULADOR ───────── */
