@@ -1673,3 +1673,13 @@ body.laser {
 body.laser #laser {
     display: block
 }
+
+/* ZOOM DE IMAGENES */
+figure img,img.zoom{cursor:zoom-in}
+#zoomVisor{position:fixed;inset:0;z-index:250;display:none;flex-direction:column;align-items:center;justify-content:center;gap:14px;
+  background:rgba(3,5,12,.94);backdrop-filter:blur(6px);cursor:zoom-out}
+#zoomVisor.abierto{display:flex}
+#zoomVisor img{max-width:94vw;max-height:84vh;object-fit:contain;border-radius:10px;box-shadow:0 20px 70px rgba(0,0,0,.6);animation:zoomEntra .25s ease-out}
+#zoomVisor .zoom-pie{color:var(--text,#eef2ff);font:600 20px var(--sans,sans-serif);text-align:center;max-width:90vw}
+#zoomVisor .zoom-cerrar{position:absolute;top:16px;right:20px;color:var(--muted,#9aa7d1);font:600 15px var(--mono,monospace)}
+@keyframes zoomEntra{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:none}}

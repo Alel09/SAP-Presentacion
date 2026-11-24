@@ -458,3 +458,36 @@ let tx = null; addEventListener('touchstart', e => tx = e.touches[0].clientX, { 
 addEventListener('touchend', e => { if (tx === null || e.target.closest('button,input')) return; const d = e.changedTouches[0].clientX - tx; if (Math.abs(d) > 60) d < 0 ? next() : prev(); tx = null });
 
 go((parseInt(location.hash.slice(1)) || 1) - 1, 1);
+
+// Zoom de imagenes: clic en una imagen de <figure> (o con class="zoom") la abre a pantalla completa.
+(function () {
+  var visor = document.createElement('div');
+  visor.id = 'zoomVisor';
+  visor.innerHTML = '<img alt=""><div class="zoom-pie"></div><span class="zoom-cerrar">✕ Cerrar (Esc)</span>';
+  document.body.appendChild(visor);
+  var grande = visor.querySelector('img'), pie = visor.querySelector('.zoom-pie');
+
+  function abierto() { return visor.classList.contains('abierto'); }
+  function cerrar() { visor.classList.remove('abierto'); }
+  function abrir(img) {
+    grande.src = img.currentSrc || img.src;
+    grande.alt = img.alt;
+    var fig = img.closest('figure'), cap = fig && fig.querySelector('figcaption');
+    pie.textContent = cap ? cap.textContent : (img.alt || '');
+    visor.classList.add('abierto');
+  }
+
+  document.addEventListener('click', function (e) {
+    if (abierto()) { cerrar(); return; }
+    var img = e.target.closest('figure img, img.zoom');
+    if (img && !img.classList.contains('nozoom')) abrir(img);
+  });
+
+  // Captura el teclado antes que la navegacion de diapositivas
+  document.addEventListener('keydown', function (e) {
+    if (!abierto()) return;
+    e.stopPropagation();
+    e.preventDefault();
+    if (e.key === 'Escape') cerrar();
+  }, true);
+})();
