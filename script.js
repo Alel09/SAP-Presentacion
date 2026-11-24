@@ -398,7 +398,7 @@ const inst = () => { const e = $('.sim,.game,.countdown', slides[cur]); return e
 function toggleOv(on) {
     if (on === undefined) on = !$('#ovl').classList.contains('show');
     if (on) {
-        $('#ovGrid').innerHTML = slides.map((s, i) => `<div class="ovc ${i === cur ? 'cur' : ''}" data-i="${i}"><small>${String(i + 1).padStart(2, '0')}</small><div>${esc(s.dataset.title || 'Diapositiva ' + (i + 1))}</div>${s.dataset.presenter ? `<em>🎤 ${esc(s.dataset.presenter)}</em>` : ''}</div>`).join('');
+        $('#ovGrid').innerHTML = slides.map((s, i) => `<div class="ovc ${i === cur ? 'cur' : ''}" data-i="${i}"><small>${String(i + 1).padStart(2, '0')}</small><div>${esc(s.dataset.title || 'Diapositiva ' + (i + 1))}</div>${s.dataset.presenter ? `<em>${esc(s.dataset.presenter)}</em>` : ''}</div>`).join('');
         $$('.ovc').forEach(c => c.onclick = () => { go(+c.dataset.i, +c.dataset.i >= cur ? 1 : -1); toggleOv(false) })
     }
     $('#ovl').classList.toggle('show', on)
