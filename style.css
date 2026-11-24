@@ -1683,3 +1683,36 @@ figure img,img.zoom{cursor:zoom-in}
 #zoomVisor .zoom-pie{color:var(--text,#eef2ff);font:600 20px var(--sans,sans-serif);text-align:center;max-width:90vw}
 #zoomVisor .zoom-cerrar{position:absolute;top:16px;right:20px;color:var(--muted,#9aa7d1);font:600 15px var(--mono,monospace)}
 @keyframes zoomEntra{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:none}}
+
+/* Scrollbar estilizado solo para el pseudocódigo con scroll */
+pre.code.code-scroll {
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: rgba(72, 149, 239, 0.55) rgba(15, 23, 42, 0.45); /* thumb | track */
+}
+
+/* Chrome, Edge, Safari y navegadores basados en Chromium */
+pre.code.code-scroll::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+pre.code.code-scroll::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.45);
+    border-radius: 999px;
+}
+
+pre.code.code-scroll::-webkit-scrollbar-thumb {
+    background: rgba(72, 149, 239, 0.55);
+    border-radius: 999px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
+
+pre.code.code-scroll::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 245, 212, 0.75);
+    background-clip: content-box;
+}
+
+pre.code.code-scroll::-webkit-scrollbar-corner {
+    background: transparent;
+}
