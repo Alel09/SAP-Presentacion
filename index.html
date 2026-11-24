@@ -55,15 +55,23 @@ FinAlgoritmo</pre>
                     <div class="card frag">
                         <h3 class="c4">Contexto</h3>
                         <ul class="bul no" style="gap:12px;margin-top:14px">
-                            <li>Un banco de alimentos dispone semanalmente de una cantidad limitada de paquetes alimentarios para apoyar a familias de una comunidad.</li>
-                            <li>Las solicitudes recibidas pueden superar la cantidad de apoyos disponibles. Además, las familias presentan características y necesidades diferentes, por lo que el problema no consiste únicamente en entregar los paquetes conforme se reciben las solicitudes, sino en establecer un procedimiento claro, transparente y justificable para determinar cómo distribuir los recursos disponibles.</li>
+                            <li>Un banco de alimentos dispone semanalmente de una cantidad limitada de paquetes
+                                alimentarios para apoyar a familias de una comunidad.</li>
+                            <li>Las solicitudes recibidas pueden superar la cantidad de apoyos disponibles. Además, las
+                                familias presentan características y necesidades diferentes, por lo que el problema no
+                                consiste únicamente en entregar los paquetes conforme se reciben las solicitudes, sino
+                                en establecer un procedimiento claro, transparente y justificable para determinar cómo
+                                distribuir los recursos disponibles.</li>
                         </ul>
                     </div>
                     <div class="card frag">
                         <h3 class="c1">Problema</h3>
                         <ul class="bul ok" style="gap:12px;margin-top:14px">
-                            <li>Diseñar una solución algorítmica que permita procesar las solicitudes de las familias y distribuir una cantidad limitada de paquetes alimentarios de acuerdo con criterios previamente definidos.</li>
-                            <li>El sistema deberá considerar que posiblemente no existan suficientes apoyos para todas las familias solicitantes.</li>
+                            <li>Diseñar una solución algorítmica que permita procesar las solicitudes de las familias y
+                                distribuir una cantidad limitada de paquetes alimentarios de acuerdo con criterios
+                                previamente definidos.</li>
+                            <li>El sistema deberá considerar que posiblemente no existan suficientes apoyos para todas
+                                las familias solicitantes.</li>
                         </ul>
                     </div>
                 </div>
@@ -74,7 +82,9 @@ FinAlgoritmo</pre>
                     <div class="card frag">
                         <h3 class="c4">Objetivo</h3>
                         <ul class="bul no" style="gap:12px;margin-top:14px">
-                            <li>Diseñar, formular y representar una solución algorítmica que permita realizar la asignación de los apoyos alimentarios de manera consistente con los criterios establecidos y generar información que permita evaluar los resultados obtenidos.</li>
+                            <li>Diseñar, formular y representar una solución algorítmica que permita realizar la
+                                asignación de los apoyos alimentarios de manera consistente con los criterios
+                                establecidos y generar información que permita evaluar los resultados obtenidos.</li>
                         </ul>
                     </div>
                 </div>
@@ -141,6 +151,180 @@ FinAlgoritmo</pre>
                 <h2 class="grad">Diferenciación de la formulación y la implementación de la solución.</h2>
                 <p class="lead">Resolver la lógica de un problema y escribirla en una herramienta concreta son etapas
                     relacionadas, pero distintas. Una buena implementación no corrige una formulación equivocada. </p>
+            </section>
+
+            <section class="slide" data-title="Diagrama ↔ prot_pres" data-presenter="Nombre 2">
+                <div class="kicker">Problema de Aplicación · prot_pres</div>
+                <h2>Evaluación y selección de familias</h2>
+                <div class="cols cols-4060 grow" style="min-height:0">
+                    <pre class="code frag" style="align-self:start;max-height:520px;overflow:auto;font-size:12px">
+Algoritmo prot_pres
+	// equipo 8: KAERU NO KAMI
+	Definir registro, integrantes, nmenores, ndiscapacitados, nadultos, ayudas, i, fam Como Entero
+	Definir ingreso, ponderacion, promingresos, suma, promedio, ayuda, max1 Como Real
+	Definir resultado Como Real
+	
+	Escribir "Cuantas familias se encuentran registradas:"
+	Leer fam
+	
+	Dimensionar resultado[fam]
+	
+	suma &lt;- 0
+	i &lt;- 1
+	
+	Mientras i &lt;= fam Hacer
+		ponderacion &lt;- 0
+		ayuda &lt;- 0
+		
+		Escribir "=========================================="
+		Escribir "Familia #", i
+		Escribir "Bienvenido al programa de seleccion de apoyo para familias"
+		Escribir "Para iniciar, ¿cuando se registro al programa? (1=sobre tiempo, 2=3 dias antes, 3=3ra semana, 4=2da semana, 5=1ra semana)"
+		Leer registro
+		Escribir "¿De cuanto es el ingreso mensual que tiene tu familia?"
+		Leer ingreso
+		Escribir "¿Cuantos integrantes tiene tu familia?"
+		Leer integrantes
+		Escribir "¿Cuantos integrantes menores de edad tiene tu familia?"
+		Leer nmenores
+		Escribir "¿Cuantos integrantes discapacitados tiene tu familia?"
+		Leer ndiscapacitados
+		Escribir "¿Cuantos integrantes mayores de edad tiene tu familia?"
+		Leer nadultos
+		Escribir "¿Cuantos apoyos tiene tu familia?"
+		Leer ayudas
+		
+		Si integrantes &lt;&gt; (nmenores + nadultos + ndiscapacitados) Entonces
+			ponderacion &lt;- 1
+		FinSi
+		
+		Si (registro = 1) O (ayudas &gt;= 3) O (ponderacion = 1) Entonces
+			resultado[i] &lt;- 0
+			Escribir "Familia descalificada o datos de integrantes inconsistentes (0 puntos)."
+		SiNo
+			ponderacion &lt;- 0
+			promingresos &lt;- ingreso / integrantes
+			
+			Si (nmenores &gt; 0) O (ndiscapacitados &gt; 0) O (nadultos &lt; 2) Entonces
+				ponderacion &lt;- promingresos / 8500
+			SiNo
+				ponderacion &lt;- promingresos / 7000
+			FinSi
+			
+			Si registro &gt; 3 Entonces
+				ayuda &lt;- ayuda + 3
+			SiNo
+				ayuda &lt;- ayuda + 1
+			FinSi
+			
+			Si ponderacion &lt; 2 Entonces
+				ayuda &lt;- ayuda + 3
+			SiNo
+				Si ponderacion &lt; 3.5 Entonces
+					ayuda &lt;- ayuda + 2
+				SiNo
+					ayuda &lt;- ayuda + 1
+				FinSi
+			FinSi
+			
+			ponderacion &lt;- (nmenores * 100) / integrantes
+			Si ponderacion &lt; 20 Entonces
+				ayuda &lt;- ayuda + 1
+			SiNo
+				Si ponderacion &lt; 35 Entonces
+					ayuda &lt;- ayuda + 2
+				SiNo
+					ayuda &lt;- ayuda + 3
+				FinSi
+			FinSi
+			
+			ponderacion &lt;- (ndiscapacitados * 100) / integrantes
+			Si ponderacion &lt; 10 Entonces
+				ayuda &lt;- ayuda + 2
+			SiNo
+				ayuda &lt;- ayuda + 3
+			FinSi
+			
+			ponderacion &lt;- (nadultos * 100) / integrantes
+			Si ponderacion &lt;= 30 Entonces
+				ayuda &lt;- ayuda + 1
+			SiNo
+				ayuda &lt;- ayuda + 3
+			FinSi
+			
+			resultado[i] &lt;- ayuda
+		FinSi
+		
+		suma &lt;- suma + resultado[i]
+		i &lt;- i + 1
+	FinMientras
+	
+	promedio &lt;- suma / fam
+	max1 &lt;- 0
+	i &lt;- 1
+	
+	Escribir "=========================================="
+	Escribir "El promedio general de puntajes fue: ", promedio
+	Escribir "Las familias seleccionadas (superan el promedio) son:"
+	
+	Mientras i &lt;= fam Hacer
+		Si resultado[i] &gt; promedio Entonces
+			Escribir "- Familia #", i, " con puntaje de: ", resultado[i]
+			Si resultado[i] &gt; max1 Entonces
+				max1 &lt;- resultado[i]
+			FinSi
+		FinSi
+		i &lt;- i + 1
+	FinMientras
+	
+	Escribir "El puntaje mas alto obtenido fue: ", max1
+FinAlgoritmo</pre>
+                    <div class="diagram frag">
+                        <pre class="flowchart">
+st=>start: Inicio (prot_pres)
+io_fam=>inputoutput: Leer fam
+init1=>operation: suma = 0 · i = 1
+c_loop1=>condition: ¿i <= fam?
+io_dat=>inputoutput: Leer datos de familia i
+c_val=>condition: ¿Integrantes != suma roles?
+set_p1=>operation: ponderacion = 1|importante
+c_desc=>condition: ¿Descalificada (reg=1, ayudas>=3, pond=1)?
+desc_0=>operation: resultado[i] = 0 · Escribir descalificada|importante
+c_cat=>condition: ¿Tiene menores, discapacitados o <2 adultos?
+p_8500=>operation: ponderacion = promingresos / 8500
+p_7000=>operation: ponderacion = promingresos / 7000
+calc_pts=>operation: Sumar puntos (registro, ingreso, % menores/disc/adultos) -> resultado[i]
+acc1=>operation: suma = suma + resultado[i] · i = i + 1
+calc_prom=>operation: promedio = suma / fam · max1 = 0 · i = 1 · Escribir promedio
+c_loop2=>condition: ¿i <= fam?
+c_sel=>condition: ¿resultado[i] > promedio?
+c_max=>condition: ¿resultado[i] > max1?
+set_max=>operation: max1 = resultado[i] · Escribir seleccionada|ok
+inc2=>operation: i = i + 1
+io_fin=>inputoutput: Escribir puntaje máximo (max1)|ok
+e=>end: Fin
+
+st->io_fam->init1->c_loop1
+c_loop1(yes)->io_dat->c_val
+c_val(yes)->set_p1->c_desc
+c_val(no)->c_desc
+c_desc(yes)->desc_0->acc1
+c_desc(no)->c_cat
+c_cat(yes)->p_8500->calc_pts
+c_cat(no)->p_7000->calc_pts
+calc_pts->acc1
+acc1(left)->c_loop1
+c_loop1(no, right)->calc_prom->c_loop2
+c_loop2(yes)->c_sel
+c_sel(yes)->c_max
+c_max(yes)->set_max->inc2
+c_max(no)->inc2
+c_sel(no)->inc2
+inc2(left)->c_loop2
+c_loop2(no, right)->io_fin->e
+</pre>
+                    </div>
+                </div>
             </section>
 
             <!--<section class="slide" data-title="Ejecutando la solución." data-presenter="Nombre 1"
