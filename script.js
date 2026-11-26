@@ -70,15 +70,16 @@ const SIMS = {
 
 /* Quiz con tiempo. Con 2+ equipos se alternan los turnos. 1 equipo = modo individual. */
 const QUIZ = {
-    titulo: 'Quiz relámpago', tiempo: 15,
+    titulo: 'Quiz relámpago', tiempo: 20,
     equipos: ['Equipo A', 'Equipo B'],
     preguntas: [
-        { q: '¿Con qué palabra se cierra una estructura "Si"?', o: ['FinSi', 'Fin', 'Cerrar', 'EndIf'], a: 0, why: 'Todo Si termina con FinSi.' },
-        { q: '¿Qué símbolo asigna un valor a una variable?', o: ['<-', '->', '==', '::'], a: 0, why: 'Es <-  (en modo libre también vale =).' },
-        { q: '¿Cuántas veces se ejecuta  Para i = 1 Hasta 5 Hacer ?', o: ['4', '5', '6', '1'], a: 1, why: 'i toma los valores 1, 2, 3, 4 y 5.' },
-        { q: '¿Qué instrucción muestra un mensaje en pantalla?', o: ['Escribir', 'Leer', 'Definir', 'Calcular'], a: 0, why: 'Escribir imprime en la consola; Leer pide datos.' },
-        { q: 'suma = 0 y luego Para i = 1 Hasta 3: suma = suma + i. ¿Cuánto vale suma?', o: ['3', '5', '6', '9'], a: 2, why: '0 + 1 + 2 + 3 = 6.' },
-        { q: '¿Qué figura representa una decisión en un diagrama de flujo?', o: ['Óvalo', 'Rectángulo', 'Rombo', 'Paralelogramo'], a: 2, why: 'El rombo se bifurca en Sí / No.' }
+        { q: '¿Cuales son los principales patrones algoritmicos que se emplearon en el problema?', o: ['Iteracion, Conteo y Selección', 'Secuencia, Ordenamiento y Transformacion de datos', 'Busqueda, Repetición y Transformacion de datos', 'Selección, Ordenamiento y Busqueda'], a: 0, why: 'El programa siempre se encuentra haciendo estos patrones, sin estos principales el programa no podria hacer alguno otro.' },
+        { q: '¿Cuales son las principales caracteristicas para categorizar un problema?', o: ['Entradas, Salidas, Condiciones y Restricciones', 'Resultado final, Cuestionamiento del problema y Publico Objetibo del problema', 'Tipo de programación, Compilador y Bibliotecas', 'Complejidad, Optimización, Esfuerzo del usuario y Escalabilidad'], a: 0, why: 'Por que es la que permite comprender la naturaleza del problema y orientar la deducción de caracteristicas algoritmicas.' },
+        { q: 'Al resolver un problema, se divide en 3 subtareas (reunir los datos, hacer los calculos y escribir el resultado)¿Que relación hay entre estas subtareas?', o: ['Son independientes', 'Forman una cadena', 'La unica relación es que todas son parte del mismo problema', 'Escribir el resultado primero y despues reunir datos'], a: 1, why: 'Sin los datos no se puede calcular y sin el calculo no hay resultado que escribir.' },
+        { q: '¿Para que sirve la esquematización antes de escribir su solucion en codigo?', o: ['Para que el problema se ejecute mas rápido', 'Para no tener que probrar el programa despues', 'Por que hace visible la lógica del problema antes de programar ', 'Para escribir menos lineas de codigo'], a: 2, why: 'Por que indica que datos entran, que proceso se realiza y que resultado imprime' },
+        { q: '¿Para que sirve comparar dos soluciones de un mismo problema?', o: ['Para comprobar que den el mismo resultado', 'Para ver cual esta mas bonito', 'Para elegir la mejor solución segun varios criterios', 'Para demostrar que solo hay una solución correcta'], a: 2, why: 'Por que dependiendo del contexto, el problema necesita diferentes cosas' },
+        { q: '¿Por que es importante formular ideas precisas?', o: ['Para pensar menos', 'Para resolverlo rapido', 'Para reducir ambiguedades', 'Para ver si me cambio de carrera'], a: 2, why: 'Por que debe indicar que datos se usan, que accion se realiza,bajo que condicion y que resultado se espera' },
+        { q: '¿Si Pepito habla con rosa sobre como meter los datos de envio de los paquetes a una base de datos que esta haciendo pepito(formulación o implementación)?', o: ['Formulación:Esta discutiendo el problema', 'Implementacion: Esta creando la solución', 'Formulando:Esta revisando la logica interna del problema', 'Implementación: Esta probando una solución'], a: 2, why: 'La misma respuesta lo dice XD' }
     ]
 };
 
